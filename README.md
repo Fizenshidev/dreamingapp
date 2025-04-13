@@ -21,24 +21,22 @@ A personal dream journal application built with AstroJS and Firebase, designed t
 /
 ├── public/
 │   ├── favicon.svg
-│   └── assets/
 ├── src/
 │   ├── components/
-│   │   ├── dream/
-│   │   ├── auth/
-│   │   └── ui/
+│   │   ├── DreamForm.astro
+│   │   ├── DreamList.astro
+│   │   └── DreamList.jsx
+│   ├── firebae/
+│   │   └── config.js
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
-│   │   ├── index.astro
-│   │   ├── dashboard.astro
-│   │   ├── journal/
-│   │   └── profile/
-│   ├── services/
-│   │   └── firebase/
+│   │   ├── index.astro   
+│   ├── styles/
+│   │   └── global.css
 │   └── utils/
-├── firebase.json
-└── package.json
+├── .gitignore
+└── astro.config.mjs
 ```
 
 ## 🧞 Commands
