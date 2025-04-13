@@ -1,0 +1,18 @@
+---
+import DreamForm from "../components/DreamForm.astro";
+import DreamList from "../components/DreamList.jsx";
+---
+
+<html>
+  <head>
+    <title>Mimpiku</title>
+  </head>
+  <body>
+    <main style="max-width: 600px; margin: auto; padding: 2rem;">
+      <h1 style="text-align:center;">💭 Mimpiku</h1>
+      <p style="text-align:center;">Tulis dan bagikan mimpimu ke seluruh dunia!</p>
+      <DreamForm />
+      <DreamList client:only="react" />
+    </main>
+  </body>
+</html>

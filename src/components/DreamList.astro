@@ -1,0 +1,37 @@
+---
+// src/components/DreamList.astro
+import { db, collection, getDocs, query, orderBy } from "../firebase/config.js";
+
+const q = query(collection(db, "dreams"), orderBy("createdAt", "desc"));
+const querySnapshot = await getDocs(q);
+
+const dreams = querySnapshot.docs.map(doc => doc.data());
+---
+
+<section class="dream-list">
+  <h2>Mimpi Semua Orang 🌌</h2>
+  {dreams.length === 0 && <p>Belum ada mimpi yang ditulis~ 😴</p>}
+  <ul>
+    {dreams.map((dream, i) => (
+      <li>
+        <strong>{dream.name}:</strong> {dream.dream}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .dream-list {
+    margin-top: 2rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    background: #f1f2f6;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
